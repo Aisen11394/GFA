@@ -1,41 +1,75 @@
-local library = loadstring(game:HttpGet('https://raw.githubusercontent.com/cypherdh/VanisUILIB/main/.gitignore'))()
+https://raw.githubusercontent.colocal DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/weakhoes/Roblox-UI-Libs/main/Discord%20UI%20Lib/Discord%20Lib%20Source.lua")()
 
-local Window = library:CreateWindow("Name", "Version", 10044538000)
+local win = DiscordLib:Window("discord library")
 
-local Tab = Window:CreateTab("Scripts")
+local serv = win:Server("Preview", "")
 
-local Page = Tab:CreateFrame("Page 1")
+local btns = serv:Channel("Buttons")
 
-Button = Page:CreateButton("Button", "Description", function()
-CreateNotification("Title", "Description", function(value)
-if value == true then
-print(true)
-else
-print(false)
-end
-end)
+btns:Button("Kill all", function()
+DiscordLib:Notification("Notification", "Killed everyone!", "Okay!")
 end)
 
-Toggle = Page:CreateToggle("Toggle", "Description", function(arg)
-Toggle:UpdateToggle("New Title", "New Description")
-print(arg)
+btns:Seperator()
+
+btns:Button("Get max level", function()
+DiscordLib:Notification("Notification", "Max level!", "Okay!")
 end)
 
-Bind = Page:CreateBind("KeyBind", "F", function(arg)
-Bind:UpdateBind("New Title")
-print(arg)
+local tgls = serv:Channel("Toggles")
+
+tgls:Toggle("Auto-Farm",false, function(bool)
+print(bool)
 end)
 
-TextBox = Page:CreateBox("TextBox", 10044538000, function(arg)
-TextBox:UpdateBox("New Title")
-while task.wait() do
-    game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed = value
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
+local sldrs = serv:Channel("Sliders")
+
+local sldr = sldrs:Slider("Slide me!", 0, 1000, 400, function(t)
+print(t)
 end)
 
-Page:CreateSlider("Slider", 16, 500,function(arg)
-   print(arg)
+sldrs:Button("Change to 50", function()
+sldr:Change(50)
 end)
 
-Label = Page:CreateLabel("Label")
-Label:UpdateLabel("New Title")
+local drops = serv:Channel("Dropdowns")
+
+
+local drop = drops:Dropdown("Pick me!",{"Option 1","Option 2","Option 3","Option 4","Option 5"}, function(bool)
+print(bool)
+end)
+
+drops:Button("Clear", function()
+drop:Clear()
+end)
+
+drops:Button("Add option", function()
+drop:Add("Option")
+end)
+
+local clrs = serv:Channel("Colorpickers")
+
+clrs:Colorpicker("ESP Color", Color3.fromRGB(255,1,1), function(t)
+print(t)
+end)
+
+local textbs = serv:Channel("Textboxes")
+
+textbs:Textbox("Gun power", "Type here!", true, function(t)
+print(t)
+end)
+
+local lbls = serv:Channel("Labels")
+
+lbls:Label("This is just a label.")
+
+local bnds = serv:Channel("Binds")
+
+bnds:Bind("Kill bind", Enum.KeyCode.RightShift, function()
+print("Killed everyone!")
+end)
+
+serv:Channel("by dawid#7205")
+
+
+win:Server("Main", "http://www.roblox.com/asset/?id=6031075938")
