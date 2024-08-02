@@ -1,4 +1,4 @@
-https://raw.githubusercontent.colocal DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/weakhoes/Roblox-UI-Libs/main/Discord%20UI%20Lib/Discord%20Lib%20Source.lua")()
+local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
 
 local win = DiscordLib:Window("discord library")
 
