@@ -19,7 +19,7 @@ end)
 local tgls = serv:Channel("Toggles")
 
 tgls:Toggle("Auto-Farm",false, function(bool)
-print(bool)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Eazvy/UILibs/main/ESP/Skeleton/Example"))()
 end)
 
 local sldrs = serv:Channel("Sliders")
